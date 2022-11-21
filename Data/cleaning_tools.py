@@ -4,10 +4,14 @@ from nltk.corpus import stopwords
 
 stemmer = PorterStemmer()
 repl_dict = {"%20": " ",
-             "&gt;":"",
-             r'\r':' ',
+             "&gt;": "",
+            # "??": "?",
+             r'\r': ' ',
              r'\x89': "",
-             r'\n':' '}
+             r'\n': ' ',
+             r'\x9d': "",
+             "_": "",
+             }
 
 
 def remove_http(text):
