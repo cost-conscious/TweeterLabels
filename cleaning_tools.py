@@ -1,13 +1,21 @@
 import re
+
+import nltk
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
-
+w_tokenizer = nltk.tokenize.WhitespaceTokenizer()
+lemmatizer = nltk.stem.WordNetLemmatizer()
+# nltk.download()
 stemmer = PorterStemmer()
 repl_dict = {"%20": " ",
-             "&gt;":"",
-             r'\r':' ',
+             "&gt;": "",
+            # "??": "?",
+             r'\r': ' ',
              r'\x89': "",
-             r'\n':' '}
+             r'\n': ' ',
+             r'\x9d': "",
+             "_": "",
+             }
 
 
 def remove_http(text):
@@ -27,3 +35,9 @@ def remove_stopwords(text):
 def text_stemmer(text):
     text_stem = " ".join([stemmer.stem(word) for word in text.split()])
     return text_stem
+
+
+def lemmatize_text(text):
+    this = [lemmatizer.lemmatize(w) for w in w_tokenizer.tokenize(text)]
+    return this
+
