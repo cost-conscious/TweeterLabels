@@ -23,18 +23,9 @@ st.markdown(title, unsafe_allow_html=True)
 
 
 # # twitter icon
-# path = os.path.dirname(__file__)
-# my_file = path+'/TwitterIcon.png'
-# image = Image.open('my_file')
-# st.image(image)
-
-def file_selector(folder_path='.'):
-    filenames = os.listdir(folder_path)
-    selected_filename = st.selectbox('Select a file', filenames)
-    return os.path.join(folder_path, selected_filename)
-
-filename = file_selector()
-st.write('You selected `%s`' % filename)
+my_file = './WebApp/TwitterIcon.png'
+image = Image.open(my_file)
+st.image(image)
 
 # description
 description_1 = '<p style="color:white; font-size: 40px; text-align: center;"><strong>Predict whether a tweet is about a real disaster or not</strong></p>'
