@@ -1,0 +1,7 @@
+annoy==1.17.1
+pandas==1.4.4
+Pillow==9.3.0
+requests==2.28.1
+sentence_transformers==2.2.2
+streamlit==1.15.0
+tweepy==4.12.1
