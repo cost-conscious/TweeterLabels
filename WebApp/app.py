@@ -11,7 +11,6 @@ import random
 import tweepy
 from sentence_transformers import SentenceTransformer
 from annoy import AnnoyIndex
-import os
 
 ####
 ## CSS Layout
@@ -42,7 +41,7 @@ def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-local_css("style.css")
+local_css("./WebApp/style.css")
 
 
 # field for tweet URL or text
@@ -69,8 +68,8 @@ lucky = st.button("Predict random tweet")
 embeddings_dim = 384
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 annoy_index = AnnoyIndex(embeddings_dim, 'angular')
-annoy_index.load('../Data/annoy_index.ann')
-target = pd.read_csv("../Data/train.csv", encoding='utf-8', usecols = ['id', 'target'])
+annoy_index.load('./Data/annoy_index.ann')
+target = pd.read_csv("./Data/train.csv", encoding='utf-8', usecols = ['id', 'target'])
 
 
 def tweetHTML(tweet_url):
