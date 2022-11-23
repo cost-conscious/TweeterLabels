@@ -109,9 +109,9 @@ def get_results(prediction):
     Gets the resulting markdown text shown to the user that says whether the tweet is about a real disaster or not
     """
     if prediction == 1:
-        results = '<p style="color:white; font-size: 30px; text-align: center;">We predict that this tweet is about a <strong>real</strong> disaster</p>'
+        results = '<p style="color:red; font-size: 30px; text-align: center; text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;">We predict that this tweet is about a <strong>real</strong> disaster &#9888;</p>'
     elif prediction == 0:
-        results = '<p style="color:white; font-size: 30px; text-align: center;">We predict that this tweet is <strong>not</strong> about a real disaster</p>'
+        results = '<p style="color:white; font-size: 30px; text-align: center; ">We predict that this tweet is <strong>not</strong> about a real disaster</p>'
 
     return results
 
@@ -126,7 +126,7 @@ if lucky:
     client = tweepy.Client(bearer_token='AAAAAAAAAAAAAAAAAAAAAHtrjgEAAAAAWTPEH5e5lZQ1mH6NwKZuTV8tGsM%3Dp7s5cERyDIPkUsv2I8HSzeZJgYNhBM1PROBACpJkSEcsjG6QFz')
     
     # get a hashtag from list + tweet must be in English
-    disaster_hashtags = ['#evacuation', '#hurricane', '#earthquake', '#bushfire']
+    disaster_hashtags = ['#evacuation', '#hurricane', '#earthquake', '#bushfire', '#disaster', '#puppy', '#happy']
     query = random.choice(disaster_hashtags) + " lang:en" 
 
     # get url of a random tweet among 10 that contain hashtag
