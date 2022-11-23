@@ -11,6 +11,7 @@ import random
 import tweepy
 from sentence_transformers import SentenceTransformer
 from annoy import AnnoyIndex
+import os
 
 ####
 ## CSS Layout
@@ -22,9 +23,10 @@ st.markdown(title, unsafe_allow_html=True)
 
 
 # twitter icon
-image = Image.open('TwitterIcon.png')
+path = os.path.dirname(__file__)
+my_file = path+'/TwitterIcon.png'
+image = Image.open('my_file')
 st.image(image)
-
 
 # description
 description_1 = '<p style="color:white; font-size: 40px; text-align: center;"><strong>Predict whether a tweet is about a real disaster or not</strong></p>'
