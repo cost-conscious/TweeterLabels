@@ -126,7 +126,7 @@ if lucky:
     client = tweepy.Client(bearer_token='AAAAAAAAAAAAAAAAAAAAAHtrjgEAAAAAWTPEH5e5lZQ1mH6NwKZuTV8tGsM%3Dp7s5cERyDIPkUsv2I8HSzeZJgYNhBM1PROBACpJkSEcsjG6QFz')
     
     # get a hashtag from list + tweet must be in English
-    disaster_hashtags = ['#evacuation', '#hurricane', '#earthquake', '#bushfire', '#disaster', '#tsunami','#puppy']
+    disaster_hashtags = ['#evacuation', '#hurricane', '#earthquake', '#bushfire', '#disaster', '#tsunami']
     query = random.choice(disaster_hashtags) + " lang:en" 
 
     # get url of a random tweet among 10 that contain hashtag
